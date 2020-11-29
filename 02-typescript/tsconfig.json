@@ -1,5 +1,5 @@
 {
-  "exclude": ["lessons"],
+  "exclude": ["lessons", "typescript-importer"],
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
 
