@@ -39,12 +39,11 @@
     // ese método debe de retornar un numero.
     var Rectangulo = /** @class */ (function () {
         function Rectangulo(base, altura) {
+            var _this = this;
             this.base = base;
             this.altura = altura;
+            this.calcularArea = function () { return _this.base * _this.altura; };
         }
-        Rectangulo.prototype.area = function () {
-            return this.base * this.altura;
-        };
         return Rectangulo;
     }());
 })();

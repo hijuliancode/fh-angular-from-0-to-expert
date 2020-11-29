@@ -5,8 +5,8 @@
   let edad:number = 23;
 
   const PERSONAJE = {
-    nombre: nombre,
-    edad: edad
+    nombre,
+    edad
   };
 
   interface SuperHeroe {
@@ -15,7 +15,7 @@
   }
 
   // Cree una interfaz que sirva para validar el siguiente objeto
-  let batman:SuperHeroe = {
+  const batman:SuperHeroe = {
     nombre: 'Bruno Díaz',
     artesMarciales: ['Karate','Aikido','Wing Chun','Jiu-Jitsu']
   }
@@ -53,9 +53,7 @@
       public base   : number,
       public altura : number
     ) {}
-    area():number {
-      return this.base * this.altura;
-    }
+    calcularArea = ():number => this.base * this.altura;
   }
 
 
