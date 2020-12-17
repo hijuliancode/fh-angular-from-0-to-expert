@@ -31,3 +31,15 @@ body {
 .fadeIn {
   animation-name: fadeIn;
 }
+
+/* Heroes */
+
+.heroe-avatar {
+  position: relative;
+}
+.heroe-avatar__house {
+  max-width: 60px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
