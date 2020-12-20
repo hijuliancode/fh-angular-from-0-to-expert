@@ -7,15 +7,7 @@
   
   <h1 *ngIf="!terminoBusqueda" class="animated fadeIn mb-4">Heroes de <span>Marvel y DC</span></h1>
     <div class="animated fadeIn card-columns">
-      <div class="card" *ngFor="let heroe of heroes; let i = index">
-        <img class="card-img-top" [src]="heroe.img" [alt]="heroe.nombre">
-        <div class="card-body">
-          <h4 class="card-title">{{ heroe.nombre }}</h4>
-          <p class="card-text">{{ heroe.bio }}</p>
-          <p class="card-text"><span class="text-muted">{{ heroe.aparicion }}</span></p>
-          <button (click)="verHeroe(i)" class="btn btn-outline-primary btn-block">Ver más</button>
-          <!-- <a [routerLink]="['/heroe', i]" class="btn btn-outline-primary btn-block">Ver más</a> -->
-        </div>
-      </div>
+      <!-- <div class="card" *ngFor="let heroe of heroes; let i = index"></div> -->
+      <app-heroe-card [heroe]="heroe" [index]="i" *ngFor="let heroe of heroes; let i = index"></app-heroe-card>
     </div>
 </div>
