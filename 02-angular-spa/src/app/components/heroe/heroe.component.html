@@ -9,19 +9,20 @@
   <hr>
 
   <div class="media row">
-    <div class="col-12 col-lg-4 heroe-avatar">
-      <img [src]="heroe.img" class="align-self-end img-fluid" [alt]="heroe.nombre">
-      <img *ngIf="heroe.casa === 'Marvel'" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Symbol_from_Marvel%27s_The_Avengers_logo.svg" class="heroe-avatar__house" alt="Marvel Comics">
-      <img *ngIf="heroe.casa === 'DC'" src="https://upload.wikimedia.org/wikipedia/commons/3/3d/DC_Comics_logo.svg" class="heroe-avatar__house" alt="DC Comics">
+    <div class="col-12 col-lg-4">
+      <div class="heroe-avatar">
+        <img [src]="heroe.img" class="align-self-end img-fluid" [alt]="heroe.nombre">
+        <img *ngIf="heroe.casa === 'Marvel'" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Symbol_from_Marvel%27s_The_Avengers_logo.svg" class="heroe-avatar__house" alt="Marvel Comics">
+        <img *ngIf="heroe.casa === 'DC'" src="https://upload.wikimedia.org/wikipedia/commons/3/3d/DC_Comics_logo.svg" class="heroe-avatar__house" alt="DC Comics">
+      </div>
+      <a [routerLink]="['/heroes']" class="btn btn-outline-primary btn-block mt-5">Volver</a>
     </div>
     <div class="col-12 col-lg-8">
       <div class="media-body">
         <h4 class="mt-0">{{ heroe.nombre }}</h4>
         <p class="text-justify">{{ heroe.bio }}</p>
-        <p class="card-text text-right"><span class="text-muted">{{ heroe.aparicion }}</span></p>
+        <p class="card-text text-right"><span class="text-muted">{{ heroe.aparicion | date }}</span></p>
       </div>
-    </div>
-    <a [routerLink]="['/heroes']" class="btn btn-outline-primary btn-block mt-5">Volver</a>
+    </div>    
   </div>
-
 </div>
