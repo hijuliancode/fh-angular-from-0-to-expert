@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { Heroe } from '../../types/heroe.interface';
 
@@ -12,15 +12,26 @@ import { HeroesService } from '../../services/heroes.service';
 export class HeroesComponent implements OnInit {
 
   heroes: Heroe[] = []
+  terminoBusqueda: string = ''
 
   constructor(
+    private activatedRoute: ActivatedRoute,
     private heroesService: HeroesService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
-    this.heroes = this.heroesService.getHeroes()
-    console.log(this.heroes)
+    this.activatedRoute.params.subscribe(
+      params => {
+        if ( params['busqueda'] ) {
+          this.heroes = this.heroesService.buscarHeroes(params['busqueda'])
+          this.terminoBusqueda = params['busqueda']
+        } else {
+          this.heroes = this.heroesService.getHeroes()
+          this.terminoBusqueda = ''
+        }
+      }
+    )
   }
 
   verHeroe(idx: number) {

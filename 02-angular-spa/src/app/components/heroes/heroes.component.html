@@ -1,5 +1,6 @@
 <div class="container mt-4 animated fadeIn fast">
-  <h1 class="mb-4">Heroes de <span>Marvel y DC</span></h1>
+  <h1 *ngIf="terminoBusqueda" class="mb-4">Resultado de : <u>{{terminoBusqueda}}</u> </h1>
+  <h1 *ngIf="!terminoBusqueda" class="mb-4">Heroes de <span>Marvel y DC</span></h1>
 
     <div class="card-columns">
       <div class="card" *ngFor="let heroe of heroes; let i = index">
