@@ -1,4 +1,5 @@
 export interface Heroe {
+  idx: string;
   nombre: string;
   bio: string;
   img: string;

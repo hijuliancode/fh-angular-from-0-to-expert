@@ -9,9 +9,9 @@ import { Heroe } from '../../types/heroe.interface';
 export class HeroeCardComponent implements OnInit {
 
   @Input() heroe: any;
-  @Input() index: any;
+  @Input() index: string | undefined;
 
-  @Output() heroeSeleccionado: EventEmitter<number>
+  @Output() heroeSeleccionado: EventEmitter<string>
 
   constructor(
     private router: Router
